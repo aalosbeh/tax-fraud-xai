@@ -131,10 +131,15 @@ python core/adaptive_thresholds.py
   ## Risk Score Formula
 
 Each return's risk score is calculated using:
-
 \[
-S_c = lpha \cdot P_f + (1 - lpha) \cdot rac{R_i}{R_{max}}
+S_c = lpha \cdot P_f + (1 - lpha) \cdot rac{R_i}{R_{max}}
 \]
+
+Where:
+- \( P_f \): Predicted fraud probability (0-1)
+- \( R_i \): Estimated revenue impact
+- \( R_{max} \): Maximum observed impact across all returns
+- \( lpha \): Default 0.7 (adjustable)
 
 Where:
 - \( P_f \): Predicted fraud probability (0-1)
