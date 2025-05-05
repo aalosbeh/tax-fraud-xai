@@ -19,7 +19,11 @@ tax_fraud_detection_project/
 ├── core/ # Proactive detection engine
 │ ├── state_manager.py # Manages state and risk scores per return
 │ ├── prioritization.py # Generates fraud prioritization matrix
-│ └── adaptive_thresholds.py # Adaptive thresholds for dynamic auditing
+│ ├── adaptive_thresholds.py # Adaptive thresholds for dynamic auditing
+│ ├── state_manager.py              # Risk score and state persistence
+│ ├── confidence_interval.py       # Bootstrapped confidence estimator
+│ ├── revenue_impact.py            # Risk scoring revenue impact estimator
+│ └── pipeline_core.py             # Full system controller + processing simulation
 ├── data/
 │ └── generate_data.py # dataset 
 ├── models/
