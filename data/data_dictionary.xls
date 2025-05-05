@@ -1,0 +1,32 @@
+Feature,Description,Type
+taxpayer_id,Unique identifier for the taxpayer,object
+age,Age of the taxpayer,int32
+income_reported,Total income reported on tax return,float64
+deductions_claimed,Total deductions claimed,float64
+tax_credits_claimed,Total tax credits claimed,float64
+previous_audit_flag,"Flag indicating if the taxpayer was audited in the past (1=Yes, 0=No)",int32
+years_filing,Number of years the taxpayer has been filing taxes,int32
+num_dependents,Number of dependents claimed,int32
+self_employed,"Flag indicating if the taxpayer is self-employed (1=Yes, 0=No)",int32
+foreign_income,"Flag indicating if the taxpayer reported foreign income (1=Yes, 0=No)",int32
+rental_income,"Flag indicating if the taxpayer reported rental income (1=Yes, 0=No)",int32
+investment_income,"Income from investments (interest, dividends, capital gains)",float64
+business_expenses,Business expenses claimed by self-employed taxpayers,float64
+charitable_contributions,Charitable contributions claimed,float64
+medical_expenses,Medical expenses claimed,float64
+education_expenses,Education-related expenses claimed,float64
+mortgage_interest,Mortgage interest deduction claimed,float64
+property_tax,Property tax deduction claimed,float64
+state_local_tax,State and local tax deduction claimed,float64
+filing_status,"Filing status (Single, Married, Head of Household)",object
+occupation_category,Category of the taxpayer's occupation,object
+industry_sector,Industry sector of the taxpayer's employment,object
+geographic_region,Geographic region of the taxpayer,object
+filing_method,Method used to file taxes (Electronic or Paper),object
+filing_date,Date when the tax return was filed,object
+fraud_flag,"Fraud flag (1=Fraudulent, 0=Legitimate)",int64
+deduction_to_income_ratio,Ratio of deductions claimed to income reported,float64
+credit_to_income_ratio,Ratio of tax credits claimed to income reported,float64
+days_to_deadline,Number of days between filing date and tax deadline,int64
+expense_per_dependent,Deductions claimed per dependent (including the taxpayer),float64
+income_per_dependent,Income reported per dependent (including the taxpayer),float64
