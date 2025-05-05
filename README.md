@@ -66,7 +66,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python data/generate_data.py               # Step 1: Generate dataset
+python data/generate_data.py               # Step 1: Generate dataset (Ensure your dataset is located at: `sample_data/synthetic_tax_data.csv`)
 python models/train_xgboost.py             # Step 2: Train XGBoost model
 python models/train_dnn.py                 # Step 3: Train DNN with attention
 python models/train_hybrid.py              # Step 4: Train meta-learner
@@ -111,20 +111,51 @@ python analysis/attention_heatmap.py   # Attention weight heatmaps
 ```
 
 ### Step 5: Run Proactive Risk Framework
+**Run the System Pipeline**
 
+   Open `pipeline_core.py` and run the script:
+   - This processes all returns
+   - Computes stage-wise scores
+   - Exports state logs and scores to `results/sample_run_output.json`
+   - 
 ```bash
 python core/state_manager.py
-python core/prioritization.py
+python core/prioritization.py #View Risk Matrix (Optional)
 python core/adaptive_thresholds.py
 ```
-
-### Optional: Use as modules inside a notebook or integrated system
-
 ## Output Examples
 
 - `/figures`: Prioritization heatmap, SHAP summary, attention maps
 - `results/states.json`: Tracked fraud risk and recommendation per return
-  
+
+  ## Risk Score Formula
+
+Each return's risk score is calculated using:
+
+\[
+S_c = lpha \cdot P_f + (1 - lpha) \cdot rac{R_i}{R_{max}}
+\]
+
+Where:
+- \( P_f \): Predicted fraud probability (0-1)
+- \( R_i \): Estimated revenue impact
+- \( R_{max} \): Maximum observed impact across all returns
+- \( lpha \): Default 0.7 (adjustable)
+
+## Sample Output
+
+Each processed tax return will be scored with fields like:
+
+```json
+{
+  "return_id": "TRX103",
+  "stage": "POST_PROCESSING",
+  "fraud_prob": 0.84,
+  "revenue_impact": 124560.0,
+  "composite_score": 0.79,
+  "recommended_action": "Investigate Immediately"
+}
+```
 ## Legal Context and Ethics
 
 This tool uses only synthetically generated data (NOT REAL) that statistically mimics IRS filing patterns. It references core U.S. tax fraud statutes, including:
