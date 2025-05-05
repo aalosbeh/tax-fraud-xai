@@ -54,7 +54,7 @@ We use SHAP to generate global and local explanations for fraud predictions and 
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/tax-fraud-xai.git
+git clone https://github.com/aalosbeh/tax-fraud-xai.git
 cd tax-fraud-xai
 pip install -r requirements.txt
 ```
