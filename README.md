@@ -164,7 +164,7 @@ Each processed tax return will be scored with fields like:
 
 ```json
 {
-        "return_id": 1002.0,
+        "taxpayer_id": 1002.0,
         "stage": "initial",
         "fraud_prob": 0.55,
         "revenue_impact": 3200.0,
