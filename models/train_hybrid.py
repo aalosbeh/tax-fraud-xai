@@ -10,13 +10,25 @@ from tensorflow.keras.models import load_model
 # Load dataset
 df = pd.read_csv("data/synthetic_tax_fraud_dataset.csv")
 
-# Encode categorical features
-for col in ["filing_status", "occupation"]:
+# First, check available columns
+print("Available columns in dataset:")
+print(df.columns.tolist())
+
+# Encode categorical features - USE ACTUAL COLUMNS FROM YOUR DATASET
+categorical_features = ["filing_status"]  # Remove "occupation" if not present
+for col in categorical_features:
     le = LabelEncoder()
     df[col] = le.fit_transform(df[col])
 
-features = ["income", "deductions", "credits", "num_dependents", "filing_status", "occupation",
-            "days_to_deadline", "yearly_income_change", "deduction_to_income", "credit_to_income", "expense_per_dependent"]
+# Use only existing numerical features
+features = ["income", "deductions", "credits", "num_dependents",
+            "days_to_deadline", "yearly_income_change",
+            "deduction_to_income", "credit_to_income",
+            "expense_per_dependent"]
+
+# Add categorical features if they exist
+features += [f for f in categorical_features if f in df.columns]
+
 X = df[features].values
 y = df["is_fraud"].values
 
