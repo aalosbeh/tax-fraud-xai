@@ -1,0 +1,61 @@
+return_id,final_score,processing_stages
+1001.0,0.7343,"{
+  ""stages"": {
+    ""pre-filing"": {
+      ""status"": ""processed"",
+      ""score"": 0.3117,
+      ""timestamp"": ""2025-05-06T01:49:37.952318""
+    },
+    ""initial"": {
+      ""status"": ""processed"",
+      ""score"": 0.396,
+      ""timestamp"": ""2025-05-06T01:49:37.952318""
+    },
+    ""post-processing"": {
+      ""status"": ""processed"",
+      ""score"": 0.7343,
+      ""timestamp"": ""2025-05-06T01:49:37.952318""
+    }
+  },
+  ""audit_history"": []
+}"
+1002.0,0.838,"{
+  ""stages"": {
+    ""pre-filing"": {
+      ""status"": ""processed"",
+      ""score"": 0.625,
+      ""timestamp"": ""2025-05-06T01:49:37.953323""
+    },
+    ""initial"": {
+      ""status"": ""processed"",
+      ""score"": 0.685,
+      ""timestamp"": ""2025-05-06T01:49:37.953323""
+    },
+    ""post-processing"": {
+      ""status"": ""processed"",
+      ""score"": 0.838,
+      ""timestamp"": ""2025-05-06T01:49:37.953323""
+    }
+  },
+  ""audit_history"": []
+}"
+1003.0,0.6555,"{
+  ""stages"": {
+    ""pre-filing"": {
+      ""status"": ""processed"",
+      ""score"": 0.4023,
+      ""timestamp"": ""2025-05-06T01:49:37.953323""
+    },
+    ""initial"": {
+      ""status"": ""processed"",
+      ""score"": 0.4214,
+      ""timestamp"": ""2025-05-06T01:49:37.953323""
+    },
+    ""post-processing"": {
+      ""status"": ""processed"",
+      ""score"": 0.6555,
+      ""timestamp"": ""2025-05-06T01:49:37.953323""
+    }
+  },
+  ""audit_history"": []
+}"

@@ -1,0 +1,74 @@
+[
+    {
+        "return_id": 1001.0,
+        "stage": "pre-filing",
+        "fraud_prob": 0.12,
+        "revenue_impact": 1500.0,
+        "composite_score": 0.3117,
+        "recommended_action": "No action"
+    },
+    {
+        "return_id": 1001.0,
+        "stage": "initial",
+        "fraud_prob": 0.35,
+        "revenue_impact": 1500.0,
+        "composite_score": 0.396,
+        "recommended_action": "No action"
+    },
+    {
+        "return_id": 1001.0,
+        "stage": "post-processing",
+        "fraud_prob": 0.76,
+        "revenue_impact": 1500.0,
+        "composite_score": 0.7343,
+        "recommended_action": "Review manually"
+    },
+    {
+        "return_id": 1002.0,
+        "stage": "pre-filing",
+        "fraud_prob": 0.25,
+        "revenue_impact": 3200.0,
+        "composite_score": 0.625,
+        "recommended_action": "Review manually"
+    },
+    {
+        "return_id": 1002.0,
+        "stage": "initial",
+        "fraud_prob": 0.55,
+        "revenue_impact": 3200.0,
+        "composite_score": 0.685,
+        "recommended_action": "Review manually"
+    },
+    {
+        "return_id": 1002.0,
+        "stage": "post-processing",
+        "fraud_prob": 0.82,
+        "revenue_impact": 3200.0,
+        "composite_score": 0.838,
+        "recommended_action": "Flag for audit"
+    },
+    {
+        "return_id": 1003.0,
+        "stage": "pre-filing",
+        "fraud_prob": 0.1,
+        "revenue_impact": 2100.0,
+        "composite_score": 0.4023,
+        "recommended_action": "No action"
+    },
+    {
+        "return_id": 1003.0,
+        "stage": "initial",
+        "fraud_prob": 0.3,
+        "revenue_impact": 2100.0,
+        "composite_score": 0.4214,
+        "recommended_action": "No action"
+    },
+    {
+        "return_id": 1003.0,
+        "stage": "post-processing",
+        "fraud_prob": 0.65,
+        "revenue_impact": 2100.0,
+        "composite_score": 0.6555,
+        "recommended_action": "Review manually"
+    }
+]

@@ -1,0 +1,4 @@
+return_id,pre-filing_fraud_prob,initial_fraud_prob,post-processing_fraud_prob,revenue_impact
+1001,0.12,0.35,0.76,1500
+1002,0.25,0.55,0.82,3200
+1003,0.10,0.30,0.65,2100
