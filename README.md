@@ -158,12 +158,6 @@ Where:
 - \( R_{max} \): Maximum observed impact across all returns
 - \(lpha \): Default 0.7 (adjustable)
 
-Where:
-- \( P_f \): Predicted fraud probability (0-1)
-- \( R_i \): Estimated revenue impact
-- \( R_{max} \): Maximum observed impact across all returns
-- \( lpha \): Default 0.7 (adjustable)
-
 ## Sample Output
 
 Each processed tax return will be scored with fields like:
