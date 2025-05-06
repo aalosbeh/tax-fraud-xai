@@ -1,40 +1,39 @@
-import json
 from datetime import datetime
-from typing import Dict, Any
+import json
 
 class ReturnState:
-    def __init__(self):
+    def __init__(self, return_id):
+        self.return_id = return_id
         self.stages = {
-            "pre_filing": {"fraud_prob": 0.0, "features": {}, "timestamp": None},
-            "initial_filing": {"fraud_prob": 0.0, "features": {}, "timestamp": None},
-            "post_processing": {"fraud_prob": 0.0, "features": {}, "timestamp": None}
+            'pre-filing': {'status': 'pending', 'score': None},
+            'initial': {'status': 'pending', 'score': None},
+            'post-processing': {'status': 'pending', 'score': None}
         }
-        self.priority = "monitor"
-        self.revenue_impact = 0.0
+        self.audit_history = []
+
+    def update_stage(self, stage: str, score: float):
+        self.stages[stage]['score'] = score
+        self.stages[stage]['status'] = 'processed'
+        self.stages[stage]['timestamp'] = datetime.now().isoformat()
+
+    def get_current_risk(self):
+        return max([s['score'] for s in self.stages.values() if s['score']])
 
 class StateManager:
     def __init__(self):
-        self.state_store = {}
-    
-    def update_stage(self, return_id: str, stage: str, data: Dict[str, Any]):
-        if return_id not in self.state_store:
-            self.state_store[return_id] = ReturnState()
-        self.state_store[return_id].stages[stage] = {
-            **data,
-            "timestamp": datetime.now().isoformat()
-        }
-        self._recalculate_priority(return_id)
+        self.returns = {}
 
-    def _recalculate_priority(self, return_id: str):
-        state = self.state_store[return_id]
-        risk_score = 0.7 * state.stages['post_processing']['fraud_prob'] + 0.3 * (state.revenue_impact / 1e6)
-        if risk_score > 0.8:
-            state.priority = "investigate_immediately"
-        elif risk_score > 0.6:
-            state.priority = "secondary_review"
-        else:
-            state.priority = "monitor"
+    def add_return(self, return_id: str):
+        self.returns[return_id] = ReturnState(return_id)
 
-    def save_state(self, path: str):
-        with open(path, 'w') as f:
-            json.dump({rid: vars(state) for rid, state in self.state_store.items()}, f)
+    def update_stage(self, return_id: str, stage: str, score: float):
+        self.returns[return_id].update_stage(stage, score)
+
+    def get_current_risk(self, return_id: str):
+        return self.returns[return_id].get_current_risk()
+
+    def export_audit_trail(self, return_id: str):
+        return json.dumps({
+            'stages': self.returns[return_id].stages,
+            'audit_history': self.returns[return_id].audit_history
+        }, indent=2)

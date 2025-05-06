@@ -1,0 +1,4 @@
+return_id,pre-filing_fraud_prob,initial_fraud_prob,post-processing_fraud_prob,revenue_impact
+TX1001,0.32,0.58,0.12,25000
+TX1002,0.71,0.82,0.89,120000
+TX1003,0.45,0.63,0.78,85000
