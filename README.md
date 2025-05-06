@@ -164,12 +164,12 @@ Each processed tax return will be scored with fields like:
 
 ```json
 {
-  "return_id": "TX2023_001",
-  "stage": "post-processing",
-  "fraud_prob": 0.88,
-  "revenue_impact": 102350,
-  "composite_score": 0.834,
-  "recommended_action": "Investigate Immediately"
+        "return_id": 1002.0,
+        "stage": "initial",
+        "fraud_prob": 0.55,
+        "revenue_impact": 3200.0,
+        "composite_score": 0.685,
+        "recommended_action": "Review manually"
 }
 ```
 ## Run a Case Study
