@@ -72,4 +72,4 @@ model_dir = "D:/myProjects/Proactive-Tax-Fraud-Detection_v2/pythonProject2/model
 os.makedirs(model_dir, exist_ok=True)
 model_path = os.path.join(model_dir, "xgboost_model.json")
 model.save_model(model_path)
-print(f"✅ Model saved to {model_path}")
+print(f"Model saved to {model_path}")
