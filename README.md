@@ -51,7 +51,6 @@ tax_fraud_detection_project/
 ├── docs/
 │ ├── API_REFERENCE.md
 │ └── CASE_STUDY_WALKTHROUGH.md
-└── README.md
 ├── README.md
 ├── requirements.txt
 └── LICENSE
