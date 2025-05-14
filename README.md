@@ -20,26 +20,26 @@ The solution is designed with compliance, transparency, and scalability in mind�
 ```
 tax_fraud_detection_project/
 ├── core/ # Proactive detection engine
-│ ├── state_manager.py # Manages state and risk scores per return
-│ ├── prioritization.py # Generates fraud prioritization matrix
-│ ├── adaptive_thresholds.py # Adaptive thresholds for dynamic auditing
-│ ├── state_manager.py              # Risk score and state persistence
-│ ├── confidence_interval.py       # Bootstrapped confidence estimator
-│ ├── revenue_impact.py            # Risk scoring revenue impact estimator
+│ ├── state_manager.py #
+│ ├── prioritization.py 
+│ ├── adaptive_thresholds.py 
+│ ├── state_manager.py             
+│ ├── confidence_interval.py      
+│ ├── revenue_impact.py            
 │ └──  risk_engine.py # Dynamic fraud score computation
 ├── data/
 │ └── generate_data.py # dataset 
 ├── models/
-│ ├── train_xgboost.py # GBDT training pipeline
-│ ├── train_dnn.py # Attention-based deep neural network
-│ └── train_hybrid.py # Meta-learner to fuse outputs
+│ ├── train_xgboost.py 
+│ ├── train_dnn.py 
+│ └── train_hybrid.py 
 ├── analysis/
-│ ├── shap_analysis.py # SHAP visualization pipeline
-│ └── attention_heatmap.py # Visualizes attention in DNN
-├── figures/ # Output visualizations (SHAP, heatmaps, matrix)
-├── pipelines/   # Full system controller + processing simulation
-│ ├── realtime_processing.py # Apache Beam real-time stream handler
-│ └── batch_processing.py # Historical bulk audit simulator
+│ ├── shap_analysis.py 
+│ └── attention_heatmap.py 
+├── figures/ 
+├── pipelines/   
+│ ├── realtime_processing.py 
+│ └── batch_processing.py 
 ├── case_studies/
 │ └── 2023_audit/
 │ ├── input_data.csv
